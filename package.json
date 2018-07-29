@@ -11,7 +11,7 @@
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "ascjs src dist",
     "gitadd": "git status --porcelain && git add -A",
-    "commit-dry": "yarn gitadd && yarn commit",
+    "commit-dry": "yarn gitadd && gitcommit -sS",
     "precommit": "yarn lint && yarn test && yarn gitadd",
     "commit": "gitcommit -sS",
     "prepublishOnly": "yarn build"

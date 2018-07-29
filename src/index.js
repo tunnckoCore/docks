@@ -52,8 +52,7 @@ export default function docks() {
      * A plugin is a function that may extend the core functionality,
      * or if it returns another function it is called for each block comment.
      *
-     * Look at [src/plugins/](/tree/master/src/plugins/) folder to see
-     * the built-in ones.
+     * Look at [src/plugins/](/src/plugins) folder to see the built-in ones.
      *
      * @example
      * import docks from 'docks';

@@ -9,12 +9,11 @@ Constructor that gives you methods.
 **Returns**
 - `Object` instance of `Docks`
 
-#### [.use](/src/index.js#L80)
+#### [.use](/src/index.js#L79)
 A plugin is a function that may extend the core functionality,
 or if it returns another function it is called for each block comment.
 
-Look at [src/plugins/](/tree/master/src/plugins/) folder to see
-the built-in ones.
+Look at [src/plugins/](/src/plugins) folder to see the built-in ones.
 
 **Params**
 - `plugin` **{Function}** with signature like `(docks) => (comment) => {}`
@@ -41,7 +40,7 @@ app.use(() => (comment) => {
 });
 ```
 
-#### [.parse](/src/index.js#L113)
+#### [.parse](/src/index.js#L112)
 Parses given `input` using `@babel/parser` and passes
 all block comments to `doctrine` which is JSDoc parser.
 It also applies all the "Smart Plugins". Smart plugin is the function
