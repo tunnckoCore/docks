@@ -4,7 +4,7 @@ _Generated using [docks](http://npm.im/docks)._
 ### [src/index.js](/src/index.js)
 
 #### [docks](/src/index.js#L47)
-> Constructor that gives you methods.
+Constructor that gives you methods.
 
 **Returns**
 - `Object` instance of `Docks`

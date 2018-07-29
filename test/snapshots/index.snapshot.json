@@ -1,1 +1,1 @@
-{"foo bar":{"skip":false,"todo":false,"run":false,"isPending":false,"isRejected":false,"isFulfilled":true,"id":1,"str":"(t) => {\n  const cmts = app.parse('str');\n  _7cb‍.g.console.log(cmts.length);\n  t.ok(true);\n}","title":"foo bar"}}
+{"todo tests":{"skip":false,"todo":false,"run":false,"isPending":false,"isRejected":false,"isFulfilled":true,"id":1,"str":"async (t) => {\n  const filepath = path.join(proc.cwd(), 'src', 'plugins', 'render.js');\n  const text = await app.renderFile(filepath);\n  // console.log(text)\n  t.ok(text);\n}","title":"todo tests"}}

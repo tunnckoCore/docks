@@ -38,7 +38,7 @@ const DEFAULT_OPTIONS = {
 };
 
 /**
- * > Constructor that gives you methods.
+ * Constructor that gives you methods.
  *
  * @name docks
  * @returns {Object} instance of `Docks`

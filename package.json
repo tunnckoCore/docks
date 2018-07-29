@@ -4,11 +4,10 @@
   "license": "Apache-2.0",
   "licenseStart": "2018",
   "scripts": {
-    "predocs": "yarn build",
-    "docs": "node dist/cli.js 'src/**/*' && verb",
+    "predocs": "rm -rf docs && yarn build",
+    "docs": "node dist/cli.js 'src/**/*' --outfile docs/API.md && verb",
     "lint": "eslint src test --fix --format codeframe",
-    "test": "asia -r esm -u",
-    "cov": "nyc --require esm asia",
+    "test": "nyc --require esm asia",
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "ascjs src dist",
     "gitadd": "git status --porcelain && git add -A",
@@ -85,8 +84,7 @@
     "toc": {
       "render": true,
       "method": "preWrite",
-      "maxdepth": 4,
-      "footer": ""
+      "maxdepth": 4
     },
     "layout": "empty",
     "tasks": [
