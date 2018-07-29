@@ -1,0 +1,112 @@
+{
+  "name": "docks",
+  "description": "Extensible system for parsing and generating documentation. It just freaking works!",
+  "license": "Apache-2.0",
+  "licenseStart": "2018",
+  "scripts": {
+    "predocs": "yarn build",
+    "docs": "node dist/cli.js 'src/**/*' && verb",
+    "lint": "eslint src test --fix --format codeframe",
+    "test": "asia -r esm -u",
+    "cov": "nyc --require esm asia",
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "ascjs src dist",
+    "gitadd": "git status --porcelain && git add -A",
+    "commit-dry": "yarn gitadd && yarn commit",
+    "precommit": "yarn lint && yarn test && yarn gitadd",
+    "commit": "gitcommit -sS",
+    "prepublishOnly": "yarn build"
+  },
+  "engines": {
+    "node": "^8.9.0 || ^10.6.0"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.0.0-beta.55",
+    "doctrine": "^2.1.0",
+    "fast-glob": "^2.2.2",
+    "mkdirp": "^0.5.1",
+    "mri": "^1.1.1"
+  },
+  "devDependencies": {
+    "ascjs": "^2.5.1",
+    "asia": "^0.19.6",
+    "esm": "^3.0.72",
+    "gitcommit": "^1.0.8",
+    "new-release": "^4.0.3",
+    "nyc": "^12.0.2",
+    "xaxa": "^1.3.6"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "bin": "src/cli.js",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "version": "0.0.0-semantically-released",
+  "repository": "olstenlarck/docks",
+  "homepage": "https://github.com/olstenlarck/docks",
+  "author": "Charlike Mike Reagent (https://i.am.charlike.online)",
+  "publishConfig": {
+    "access": "public"
+  },
+  "eslintConfig": {
+    "extends": "xaxa",
+    "rules": {
+      "no-param-reassign": "off",
+      "promise/prefer-await-to-then": "off"
+    }
+  },
+  "renovate": {
+    "extends": "tunnckocore"
+  },
+  "nyc": {
+    "statements": 0,
+    "functions": 0,
+    "branches": 0,
+    "lines": 0,
+    "cache": true,
+    "check-coverage": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "exclude": [
+      "test"
+    ],
+    "extension": [
+      ".js",
+      ".jsx",
+      ".mjs"
+    ]
+  },
+  "verb": {
+    "run": true,
+    "toc": {
+      "render": true,
+      "method": "preWrite",
+      "maxdepth": 4,
+      "footer": ""
+    },
+    "layout": "empty",
+    "tasks": [
+      "readme"
+    ],
+    "related": {
+      "list": [
+        "asia",
+        "gitcommit",
+        "new-release",
+        "xaxa",
+        "charlike"
+      ]
+    },
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "new-release",
+      "semantic-release"
+    ]
+  }
+}
