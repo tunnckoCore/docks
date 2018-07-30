@@ -26,7 +26,6 @@ For bugs reports and feature requests, [please create an issue][open-issue-url] 
 
 [![Conventional Commits][ccommits-img]][ccommits-url]
 [![Become a Patron][patreon-img]][patreon-url]
-[![PayPal Author Support][paypal-donate-img]][paypal-donate-url]
 [![Share Love Tweet][shareb]][shareu]
 [![NPM Downloads Weekly][downloads-weekly-img]][npmv-url]
 [![NPM Downloads Monthly][downloads-monthly-img]][npmv-url]
