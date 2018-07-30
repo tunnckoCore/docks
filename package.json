@@ -33,7 +33,7 @@
     "gitcommit": "^1.0.8",
     "new-release": "^4.0.3",
     "nyc": "^12.0.2",
-    "xaxa": "^2.0.0"
+    "xaxa": "^2.0.2"
   },
   "files": [
     "src",

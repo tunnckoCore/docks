@@ -858,8 +858,8 @@ eslint-config-prettier@^2.9.0:
     get-stdin "^5.0.1"
 
 eslint-config-xaxa@^1.0.3:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/eslint-config-xaxa/-/eslint-config-xaxa-1.0.7.tgz#e277d18529118b5a41e00d4fb881ea9dfcaa6dd1"
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/eslint-config-xaxa/-/eslint-config-xaxa-1.0.9.tgz#01264474cc7ab673846beb619d1bde9b453c2a1e"
   dependencies:
     babel-eslint "^8.2.5"
     eslint "^4.19.1"
@@ -872,7 +872,7 @@ eslint-config-xaxa@^1.0.3:
     eslint-plugin-prettier "^2.6.2"
     eslint-plugin-promise "^3.8.0"
     eslint-plugin-react "^7.10.0"
-    eslint-plugin-unicorn "^5.0.0"
+    eslint-plugin-unicorn "^4.0.3"
     prettier "^1.13.7"
 
 eslint-import-resolver-node@^0.3.1:
@@ -952,9 +952,9 @@ eslint-plugin-react@^7.10.0:
     jsx-ast-utils "^2.0.1"
     prop-types "^15.6.2"
 
-eslint-plugin-unicorn@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-5.0.0.tgz#3cd37e9202892c4f819c3ce76dcbcae415c84b1d"
+eslint-plugin-unicorn@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-4.0.3.tgz#7e9998711bf237809ed1881a51a77000b2f40586"
   dependencies:
     clean-regexp "^1.0.0"
     eslint-ast-utils "^1.0.0"
@@ -3117,7 +3117,7 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-xaxa@^2.0.0:
+xaxa@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/xaxa/-/xaxa-2.0.2.tgz#7eaf2701f7121f59c63299cc22e44076f5ce7894"
   dependencies:
