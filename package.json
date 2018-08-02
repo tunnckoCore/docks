@@ -39,7 +39,7 @@
     "src",
     "dist"
   ],
-  "bin": "src/cli.js",
+  "bin": "dist/cli.js",
   "main": "dist/index.js",
   "module": "src/index.js",
   "version": "0.0.0-semantically-released",
