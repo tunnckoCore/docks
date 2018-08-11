@@ -7,31 +7,6 @@ import util from 'util';
 import path from 'path';
 import proc from 'process';
 
-// export type Comment = {
-//   value: string,
-//   tags: Array<{ [k: string]: any }>,
-//   pos: {
-//     start: number,
-//     end: number,
-//   },
-//   loc: {
-//     start: {
-//       line: number,
-//       column: number,
-//     },
-//     end: {
-//       line: number,
-//       column: number,
-//     },
-//   },
-// };
-
-// export type App = {
-//   renderFileSync(filepath: string): string,
-//   renderFile(filepath: string): Promise<string>,
-//   renderTextSync(comments: Comment[]): string,
-// };
-
 export default function renderPlugin(app) {
   return {
     /**
@@ -202,10 +177,15 @@ function createRender(comments, fp) {
       output.push('**Params**');
       comment.params.forEach((param) => {
         const name = param.isOptional ? `[${param.name}]` : param.name;
+        const { type } = param.type;
+
+        let str = param.type.name;
+        if (!type.name && type.type === 'UnionType') {
+          str = type.elements.map((x) => x.name).join('|');
+        }
+
         output.push(
-          `- \`${name}\` **{${escape(param.type.name)}}** ${
-            param.description
-          }`.trim(),
+          `- \`${name}\` **{${escape(str)}}** ${param.description}`.trim(),
         );
       });
     }
