@@ -180,7 +180,7 @@ function createRender(comments, fp) {
         const { type } = param.type;
 
         let str = param.type.name;
-        if (!type.name && type.type === 'UnionType') {
+        if (!str && type.type === 'UnionType') {
           str = type.elements.map((x) => x.name).join('|');
         }
 
