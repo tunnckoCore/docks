@@ -177,11 +177,10 @@ function createRender(comments, fp) {
       output.push('**Params**');
       comment.params.forEach((param) => {
         const name = param.isOptional ? `[${param.name}]` : param.name;
-        const { type } = param.type;
 
         let str = param.type.name;
-        if (!str && type.type === 'UnionType') {
-          str = type.elements.map((x) => x.name).join('|');
+        if (!str && param.type.type === 'UnionType') {
+          str = param.type.elements.map((x) => x.name).join('|');
         }
 
         output.push(
