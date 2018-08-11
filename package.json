@@ -10,10 +10,9 @@
     "test": "nyc --require esm asia",
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "ascjs src dist",
-    "gitadd": "git status --porcelain && git add -A",
-    "commit-dry": "yarn gitadd && gitcommit -sS",
-    "precommit": "yarn lint && yarn test && yarn gitadd",
-    "commit": "gitcommit -sS",
+    "commit-dry": "git status --porcelain && git add -A && gitcommit -sS",
+    "precommit": "yarn lint && yarn test",
+    "commit": "yarn commit-dry",
     "prepublishOnly": "yarn build"
   },
   "engines": {

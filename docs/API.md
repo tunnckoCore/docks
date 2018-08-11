@@ -74,6 +74,8 @@ console.log(cmts);
 
 
 
+
+
 ### [src/plugins/render.js](/src/plugins/render.js)
 
 #### [.renderFileSync](/src/plugins/render.js#L50)
@@ -194,8 +196,6 @@ app.render(files).then((output) => {
   console.log(output);
 });
 ```
-
-
 
 
 
