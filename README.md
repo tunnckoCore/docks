@@ -26,6 +26,7 @@ Project is [semantically](https://semver.org) & automatically released on [Circl
 
 ## Table of Contents
 - [Install](#install)
+- [CLI](#cli)
 - [API](#api)
   * [src/index.js](#srcindexjs)
     + [docks](#docks)
@@ -52,6 +53,22 @@ _We highly recommend to use Yarn when you think to contribute to this project._
 ```bash
 $ yarn add docks
 ```
+
+## CLI
+
+For CLI usage install it globally or as devDependency.  
+To make it work, you should add &lt;!-- docks-start --> and &lt;!-- docks-end --> placeholders
+in your existing file or provide non existing file to `--outfile` flag.
+If no `--outfile` flag is given, then it will try to search those HTML comments on README.md
+and add the API documentation there.
+
+```bash
+docks # or docks --outfile docs/API.md
+```
+
+Also, by default it collects documentation from all `src/**/*.{js,jsx,ts,tsx}` files,
+but you can give another glob pattern. For example run `docks bar/*.js`. Only block comments
+with a `@public` tag are collected and used to render the docs.
 
 ## API
 
