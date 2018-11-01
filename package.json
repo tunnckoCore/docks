@@ -9,7 +9,7 @@
     "lint": "eslint src test --cache --fix --quiet --format codeframe",
     "test": "nyc --require esm asia -R codeframe",
     "commit-dry": "git status --porcelain && git add -A && gitcommit -sS",
-    "precommit": "yarn lint && yarn test",
+    "precommit": "lint-staged && yarn test",
     "commit": "yarn commit-dry"
   },
   "engines": {
@@ -59,9 +59,14 @@
   "renovate": {
     "extends": "tunnckocore"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
+  },
   "lint-staged": {
     "**/*.{js,ts,tsx,es6,jsx,mjs}": [
-      "yarn lint",
+      "eslint --cache --fix --quiet --format codeframe",
       "git add"
     ],
     "**/*.{js,ts,tsx,es6,jsx,mjs,md,mdx,json,yaml,yml,toml}": [
