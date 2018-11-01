@@ -29,6 +29,8 @@
     "eslint": "^5.8.0",
     "eslint-config-esmc": "^1.0.11",
     "gitcommit": "^1.0.9",
+    "husky": "^1.1.2",
+    "lint-staged": "^8.0.4",
     "new-release": "^4.0.3",
     "nyc": "^12.0.2"
   },
@@ -57,24 +59,14 @@
   "renovate": {
     "extends": "tunnckocore"
   },
-  "nyc": {
-    "statements": 0,
-    "functions": 0,
-    "branches": 0,
-    "lines": 0,
-    "cache": true,
-    "check-coverage": true,
-    "reporter": [
-      "lcov",
-      "text"
+  "lint-staged": {
+    "**/*.{js,ts,tsx,es6,jsx,mjs}": [
+      "yarn lint",
+      "git add"
     ],
-    "exclude": [
-      "test"
-    ],
-    "extension": [
-      ".js",
-      ".jsx",
-      ".mjs"
+    "**/*.{js,ts,tsx,es6,jsx,mjs,md,mdx,json,yaml,yml,toml}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "verb": {
