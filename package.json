@@ -43,9 +43,9 @@
   "main": "dist/index.js",
   "module": "src/index.js",
   "version": "0.0.0-semantically-released",
-  "repository": "olstenlarck/docks",
-  "homepage": "https://github.com/olstenlarck/docks",
-  "author": "Charlike Mike Reagent (https://i.am.charlike.online)",
+  "repository": "tunnckoCore/docks",
+  "homepage": "https://github.com/tunnckoCore/docks",
+  "author": "Charlike Mike Reagent (https://tunnckocore.com)",
   "publishConfig": {
     "access": "public"
   },
