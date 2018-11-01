@@ -16,18 +16,41 @@ const app = docks();
 
 /* eslint-disable promise/prefer-await-to-callbacks */
 
-fastGlob(argv._, { ...argv, absolute: true })
+const readFile = util.promisify(fs.readFile);
+const writeFile = util.promisify(fs.writeFile);
+
+const inputFiles = argv._.length > 0 ? argv._ : 'src/**/*.{js,jsx,ts,tsx}';
+
+fastGlob(inputFiles, { ...argv, absolute: true })
   .then((files) => app.render(files))
-  .then(async (content) => {
+  .then(async (apiContent) => {
     const outfile = argv.outfile
       ? path.resolve(argv.outfile)
-      : path.resolve('docs', 'README.md');
-
-    const dirname = path.dirname(outfile);
-    await util.promisify(mkdirp)(dirname);
+      : path.resolve('README.md');
 
     const promo = '_Generated using [docks](http://npm.im/docks)._';
-    return util.promisify(fs.writeFile)(outfile, `${promo}\n${content}`);
+    const docksStart = '<!-- docks-start -->';
+    const docksEnd = '<!-- docks-end -->';
+    const content = `${docksStart}\n${promo}${apiContent}\n${docksEnd}`;
+
+    if (fs.existsSync(outfile)) {
+      const fileContent = await readFile(outfile, 'utf-8');
+
+      if (fileContent.includes(docksStart) && fileContent.includes(docksEnd)) {
+        const idxStart = fileContent.indexOf(docksStart);
+        const idxEnd = fileContent.indexOf(docksEnd);
+        const apiPart = fileContent.substring(idxStart, idxEnd);
+        const newContent = fileContent.replace(apiPart, content);
+        return writeFile(outfile, newContent);
+      }
+      const msg = `Outfile should contain placeholders or not exist.`;
+      throw new Error(msg);
+    } else {
+      const dir = path.dirname(outfile);
+      await util.promisify(mkdirp)(dir);
+
+      return writeFile(outfile, content);
+    }
   })
   .catch((err) => {
     console.error(err.stack);

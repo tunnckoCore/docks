@@ -4,14 +4,14 @@
   "license": "Apache-2.0",
   "licenseStart": "2018",
   "scripts": {
-    "predocs": "rm -rf docs && yarn build",
-    "docs": "node dist/cli.js 'src/**/*' --outfile docs/API.md && verb",
+    "predocs": "yarn build",
+    "docs": "node dist/cli.js && verb",
     "lint": "eslint src test --fix --format codeframe",
     "test": "nyc --require esm asia",
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "ascjs src dist",
     "commit-dry": "git status --porcelain && git add -A && gitcommit -sS",
-    "precommit": "yarn lint && yarn test",
+    "precommit": "yarn docs && yarn lint && yarn test",
     "commit": "yarn commit-dry",
     "prepublishOnly": "yarn build"
   },
