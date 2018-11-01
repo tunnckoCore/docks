@@ -148,7 +148,7 @@ export default function renderPlugin(app) {
           const content = await app.renderFile(fp);
           return content.length > 0 ? `### ${createLink(fp)}\n${content}` : '';
         }),
-      ).then((results) => results.join('\n\n'));
+      ).then((results) => results.filter(Boolean).join('\n\n'));
     },
   };
 }
@@ -164,6 +164,10 @@ function escape(val) {
 }
 
 function createRender(comments, fp) {
+  if (comments.length === 0) {
+    return '';
+  }
+
   const output = [];
   const link = (c) => (fp ? createLink(fp, c.name, c.loc) : c.name);
 

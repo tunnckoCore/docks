@@ -31,14 +31,14 @@ fastGlob(inputFiles, { ...argv, absolute: true })
     const promo = '_Generated using [docks](http://npm.im/docks)._';
     const docksStart = '<!-- docks-start -->';
     const docksEnd = '<!-- docks-end -->';
-    const content = `${docksStart}\n${promo}${apiContent}\n${docksEnd}`;
+    const content = `${docksStart}\n${promo}\n\n${apiContent}\n\n${docksEnd}`;
 
     if (fs.existsSync(outfile)) {
       const fileContent = await readFile(outfile, 'utf-8');
 
       if (fileContent.includes(docksStart) && fileContent.includes(docksEnd)) {
         const idxStart = fileContent.indexOf(docksStart);
-        const idxEnd = fileContent.indexOf(docksEnd);
+        const idxEnd = fileContent.indexOf(docksEnd) + docksEnd.length;
         const apiPart = fileContent.substring(idxStart, idxEnd);
         const newContent = fileContent.replace(apiPart, content);
         return writeFile(outfile, newContent);
