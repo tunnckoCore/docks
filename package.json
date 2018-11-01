@@ -27,7 +27,7 @@
     "all-contributors-cli": "^5.4.0",
     "asia": "^0.19.7",
     "eslint": "^5.8.0",
-    "eslint-config-esmc": "^1.0.11",
+    "eslint-config-esmc": "^1.0.12",
     "gitcommit": "^1.0.9",
     "husky": "^1.1.2",
     "lint-staged": "^8.0.4",
@@ -36,11 +36,13 @@
   },
   "files": [
     "src",
-    "index.js"
+    "index.js",
+    "cli.js"
   ],
+  "bin": "cli.js",
   "main": "index.js",
   "module": "src/index.js",
-  "typings": "index.d.ts",
+  "typings": "src/index.d.ts",
   "version": "0.0.0-semantically-released",
   "repository": "tunnckoCore/docks",
   "homepage": "https://github.com/tunnckoCore/docks",
@@ -50,11 +52,7 @@
     "tag": "latest"
   },
   "eslintConfig": {
-    "extends": "esmc",
-    "rules": {
-      "no-param-reassign": "off",
-      "promise/prefer-await-to-then": "off"
-    }
+    "extends": "esmc"
   },
   "renovate": {
     "extends": "tunnckocore"
