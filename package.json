@@ -4,53 +4,51 @@
   "license": "Apache-2.0",
   "licenseStart": "2018",
   "scripts": {
-    "predocks": "yarn build",
-    "docks": "node dist/cli.js --outfile .verb.md",
+    "docks": "node src/cli.js --outfile .verb.md",
     "docs": "yarn docks && verb",
-    "lint": "eslint src test --fix --format codeframe",
-    "test": "nyc --require esm asia",
-    "prebuild": "rm -rf dist && mkdir dist",
-    "build": "ascjs src dist",
+    "lint": "eslint src test --cache --fix --quiet --format codeframe",
+    "test": "nyc --require esm asia -R codeframe",
     "commit-dry": "git status --porcelain && git add -A && gitcommit -sS",
-    "precommit": "yarn docs && yarn lint && yarn test",
-    "commit": "yarn commit-dry",
-    "prepublishOnly": "yarn build"
+    "precommit": "yarn lint && yarn test",
+    "commit": "yarn commit-dry"
   },
   "engines": {
-    "node": "^8.9.0 || ^10.6.0"
+    "node": "^8.9.0 || ^10.13.0"
   },
   "dependencies": {
-    "@babel/parser": "^7.0.0-beta.55",
+    "@babel/parser": "^7.1.3",
     "doctrine": "^2.1.0",
+    "esm": "^3.0.84",
     "fast-glob": "^2.2.2",
     "mkdirp": "^0.5.1",
     "mri": "^1.1.1"
   },
   "devDependencies": {
-    "ascjs": "^2.5.1",
-    "asia": "^0.19.6",
-    "esm": "^3.0.72",
-    "gitcommit": "^1.0.8",
+    "all-contributors-cli": "^5.4.0",
+    "asia": "^0.19.7",
+    "eslint": "^5.8.0",
+    "eslint-config-esmc": "^1.0.11",
+    "gitcommit": "^1.0.9",
     "new-release": "^4.0.3",
-    "nyc": "^13.0.1",
-    "xaxa": "^2.0.2"
+    "nyc": "^12.0.2"
   },
   "files": [
     "src",
-    "dist"
+    "index.js"
   ],
-  "bin": "dist/cli.js",
-  "main": "dist/index.js",
+  "main": "index.js",
   "module": "src/index.js",
+  "typings": "index.d.ts",
   "version": "0.0.0-semantically-released",
   "repository": "tunnckoCore/docks",
   "homepage": "https://github.com/tunnckoCore/docks",
   "author": "Charlike Mike Reagent (https://tunnckocore.com)",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "latest"
   },
   "eslintConfig": {
-    "extends": "xaxa",
+    "extends": "esmc",
     "rules": {
       "no-param-reassign": "off",
       "promise/prefer-await-to-then": "off"
