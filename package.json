@@ -11,7 +11,7 @@
     "commit-dry": "git status --porcelain && git add -A && gitcommit -sS",
     "precommit": "lint-staged && yarn test",
     "commit": "yarn commit-dry",
-    "release": "standard-release"
+    "release": "tunnckocore-release"
   },
   "engines": {
     "node": "^8.9.0 || ^10.12.0"
