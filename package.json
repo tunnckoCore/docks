@@ -4,7 +4,7 @@
   "license": "Apache-2.0",
   "licenseStart": "2018",
   "scripts": {
-    "docks": "node src/cli.js --outfile .verb.md",
+    "docks": "node ./cli.js --outfile .verb.md",
     "docs": "yarn docks && verb",
     "lint": "eslint src test --cache --fix --quiet --format codeframe",
     "test": "nyc --require esm asia -R codeframe",
@@ -26,13 +26,14 @@
   "devDependencies": {
     "all-contributors-cli": "^5.4.0",
     "asia": "^0.19.7",
-    "eslint": "^5.8.0",
-    "eslint-config-esmc": "^1.0.12",
+    "eslint": "^5.12.1",
+    "eslint-config-tunnckocore": "^3.0.0",
     "gitcommit": "^1.0.9",
     "husky": "^1.1.2",
     "lint-staged": "^8.0.4",
     "new-release": "^5.0.0",
-    "nyc": "^13.0.0"
+    "nyc": "^13.0.0",
+    "prettier": "^1.16.3"
   },
   "files": [
     "src",
@@ -50,9 +51,6 @@
   "publishConfig": {
     "access": "public",
     "tag": "latest"
-  },
-  "eslintConfig": {
-    "extends": "esmc"
   },
   "renovate": {
     "extends": "tunnckocore"

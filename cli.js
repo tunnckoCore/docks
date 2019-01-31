@@ -9,7 +9,7 @@ const proc = require('process');
 const mri = require('mri');
 const mkdirp = require('mkdirp');
 const fastGlob = require('fast-glob');
-const docks = require('./index').default;
+const docks = require('./index');
 
 const argv = mri(proc.argv.slice(2));
 const app = docks();
