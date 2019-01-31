@@ -14,12 +14,15 @@
     "release": "tunnckocore-release"
   },
   "engines": {
-    "node": "^8.9.0 || ^10.12.0"
+    "node": "^8.10.0 || >=10.13.0"
+  },
+  "resolutions": {
+    "esm": "^3.2.0"
   },
   "dependencies": {
     "@babel/parser": "^7.1.3",
     "doctrine": "^3.0.0",
-    "esm": "^3.0.84",
+    "esm": "^3.2.0",
     "fast-glob": "^2.2.2",
     "mkdirp": "^0.5.1",
     "mri": "^1.1.1"
