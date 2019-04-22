@@ -35,7 +35,7 @@
     "gitcommit": "^1.0.9",
     "husky": "^1.1.2",
     "lint-staged": "^8.0.4",
-    "nyc": "^13.0.0",
+    "nyc": "^14.0.0",
     "prettier": "^1.16.3"
   },
   "files": [
