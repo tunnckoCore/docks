@@ -33,7 +33,7 @@
     "eslint": "^5.12.1",
     "eslint-config-tunnckocore": "^3.0.0",
     "gitcommit": "^1.0.9",
-    "husky": "^1.1.2",
+    "husky": "^2.0.0",
     "lint-staged": "^8.0.4",
     "nyc": "^14.0.0",
     "prettier": "^1.16.3"
