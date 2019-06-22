@@ -30,7 +30,7 @@
   "devDependencies": {
     "all-contributors-cli": "^6.0.0",
     "asia": "^0.19.7",
-    "eslint": "^5.12.1",
+    "eslint": "^6.0.0",
     "eslint-config-tunnckocore": "^3.0.0",
     "gitcommit": "^1.0.9",
     "husky": "^2.0.0",
