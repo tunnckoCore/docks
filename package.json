@@ -24,7 +24,7 @@
     "doctrine": "^3.0.0",
     "esm": "^3.2.0",
     "fast-glob": "^3.0.0",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.0",
     "mri": "^1.1.1"
   },
   "devDependencies": {
